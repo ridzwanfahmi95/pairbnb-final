@@ -28,7 +28,7 @@ get 'static_pages/landing'
   # delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   # get "/sign_up" => "clearance/users#new", as: "sign_up"
 # get 'users' => 'welcome#index'
-
+get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 #===============================================================================
   root 'welcome#index' #similar with 'static_pages/landing'(ming xiang)
 
