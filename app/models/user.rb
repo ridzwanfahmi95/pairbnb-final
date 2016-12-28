@@ -1,10 +1,8 @@
 class User < ActiveRecord::Base
   include Clearance::User
-
-  include Clearance::User
   
   has_many :authentications, :dependent => :destroy
-#   has_many :listings
+  has_many :listings
 #   has_many :bookings
 
   def self.create_with_auth_and_hash(authentication,auth_hash)

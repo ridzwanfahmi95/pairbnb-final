@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 #mx   
-# before_action :find_user, only: [:show, :edit, :update]
+before_action :find_user, only: [:show, :edit, :update]
     
    def index
       @user = User.all
@@ -40,6 +40,11 @@ class UsersController < ApplicationController
       render :edit
     end
    end
+   
+   def find_user
+    @user = User.find(params[:id])
+   end
+
 
 
    private
