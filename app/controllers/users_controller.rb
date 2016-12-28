@@ -1,4 +1,6 @@
-class UsersController < Clearance::UsersController
+class UsersController < ApplicationController
+#mx   
+# before_action :find_user, only: [:show, :edit, :update]
     
    def index
       @user = User.all
@@ -25,9 +27,18 @@ class UsersController < Clearance::UsersController
    end
      
    def edit
+       @user = User.find(params[:id])
    end
    
    def update
+      @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "Successfully updated the user"
+      redirect_to @user
+    else
+      flash[:danger] = "Error updating user"
+      render :edit
+    end
    end
 
 

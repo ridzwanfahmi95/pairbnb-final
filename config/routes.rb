@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 #=========================== by MingXiang XD ===================================
-get 'static_pages/landing'
+# get 'static_pages/landing'
 
   resources :users, only: [:index, :show, :edit, :update]
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
