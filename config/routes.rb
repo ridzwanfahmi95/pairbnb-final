@@ -86,37 +86,45 @@ get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 end
 
 # Prefix Verb   URI Pattern                             Controller#Action
-# static_pages_landing GET    /static_pages/landing(.:format)         static_pages#landing
-#               users GET    /users(.:format)                        users#index
-#           edit_user GET    /users/:id/edit(.:format)               users#edit
-#                 user GET    /users/:id(.:format)                    users#show
-#                     PATCH  /users/:id(.:format)                    users#update
-#                     PUT    /users/:id(.:format)                    users#update
-#           passwords POST   /passwords(.:format)                    clearance/passwords#create
-#         new_password GET    /passwords/new(.:format)                clearance/passwords#new
-#             session POST   /session(.:format)                      clearance/sessions#create
-#       user_password POST   /users/:user_id/password(.:format)      clearance/passwords#create
-#   edit_user_password GET    /users/:user_id/password/edit(.:format) clearance/passwords#edit
-#                     GET    /users/:user_id/password(.:format)      clearance/passwords#show
-#                     PATCH  /users/:user_id/password(.:format)      clearance/passwords#update
-#                     PUT    /users/:user_id/password(.:format)      clearance/passwords#update
-#                     GET    /users(.:format)                        users#index
-#                     POST   /users(.:format)                        users#create
-#             new_user GET    /users/new(.:format)                    users#new
-#                     GET    /users/:id/edit(.:format)               users#edit
-#                     GET    /users/:id(.:format)                    users#show
-#                     PATCH  /users/:id(.:format)                    users#update
-#                     PUT    /users/:id(.:format)                    users#update
-#                     DELETE /users/:id(.:format)                    users#destroy
-#                 root GET    /                                       welcome#index
-#                     POST   /passwords(.:format)                    clearance/passwords#create
-#                     GET    /passwords/new(.:format)                clearance/passwords#new
-#                     POST   /session(.:format)                      clearance/sessions#create
-#                     POST   /users/:user_id/password(.:format)      clearance/passwords#create
-#                     GET    /users/:user_id/password/edit(.:format) clearance/passwords#edit
-#                     PATCH  /users/:user_id/password(.:format)      clearance/passwords#update
-#                     PUT    /users/:user_id/password(.:format)      clearance/passwords#update
-#                     POST   /users(.:format)                        clearance/users#create
-#             sign_in GET    /sign_in(.:format)                      clearance/sessions#new
-#             sign_out DELETE /sign_out(.:format)                     clearance/sessions#destroy
-#             sign_up GET    /sign_up(.:format)                      clearance/users#new
+#             users GET    /users(.:format)                        users#index
+#         edit_user GET    /users/:id/edit(.:format)               users#edit
+#               user GET    /users/:id(.:format)                    users#show
+#                   PATCH  /users/:id(.:format)                    users#update
+#                   PUT    /users/:id(.:format)                    users#update
+#         passwords POST   /passwords(.:format)                    clearance/passwords#create
+#       new_password GET    /passwords/new(.:format)                clearance/passwords#new
+#           session POST   /session(.:format)                      clearance/sessions#create
+#     user_password POST   /users/:user_id/password(.:format)      clearance/passwords#create
+# edit_user_password GET    /users/:user_id/password/edit(.:format) clearance/passwords#edit
+#                   GET    /users/:user_id/password(.:format)      clearance/passwords#show
+#                   PATCH  /users/:user_id/password(.:format)      clearance/passwords#update
+#                   PUT    /users/:user_id/password(.:format)      clearance/passwords#update
+#                   GET    /users(.:format)                        users#index
+#                   POST   /users(.:format)                        users#create
+#           new_user GET    /users/new(.:format)                    users#new
+#                   GET    /users/:id/edit(.:format)               users#edit
+#                   GET    /users/:id(.:format)                    users#show
+#                   PATCH  /users/:id(.:format)                    users#update
+#                   PUT    /users/:id(.:format)                    users#update
+#                   DELETE /users/:id(.:format)                    users#destroy
+#                   GET    /auth/:provider/callback(.:format)      sessions#create_from_omniauth
+#               root GET    /                                       listings#index
+#           listings GET    /listings(.:format)                     listings#index
+#                   POST   /listings(.:format)                     listings#create
+#       new_listing GET    /listings/new(.:format)                 listings#new
+#       edit_listing GET    /listings/:id/edit(.:format)            listings#edit
+#           listing GET    /listings/:id(.:format)                 listings#show
+#                   PATCH  /listings/:id(.:format)                 listings#update
+#                   PUT    /listings/:id(.:format)                 listings#update
+#                   DELETE /listings/:id(.:format)                 listings#destroy
+#                   POST   /passwords(.:format)                    clearance/passwords#create
+#                   GET    /passwords/new(.:format)                clearance/passwords#new
+#                   POST   /session(.:format)                      clearance/sessions#create
+#                   POST   /users/:user_id/password(.:format)      clearance/passwords#create
+#                   GET    /users/:user_id/password/edit(.:format) clearance/passwords#edit
+#                   PATCH  /users/:user_id/password(.:format)      clearance/passwords#update
+#                   PUT    /users/:user_id/password(.:format)      clearance/passwords#update
+#                   POST   /users(.:format)                        clearance/users#create
+#           sign_in GET    /sign_in(.:format)                      clearance/sessions#new
+#           sign_out DELETE /sign_out(.:format)                     clearance/sessions#destroy
+#           sign_up GET    /sign_up(.:format)                      clearance/users#new
