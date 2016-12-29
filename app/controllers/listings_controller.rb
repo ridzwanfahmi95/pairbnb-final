@@ -45,7 +45,7 @@ before_action :find_listing, only: [:show, :edit, :update]
     
     
     def listing_params
-        params.require(:listing).permit(:title, :description, :max_guests, :price, :address)
+        params.require(:listing).permit(:title, :description, :max_guests, :price, :address, :picture)
     end
     
     

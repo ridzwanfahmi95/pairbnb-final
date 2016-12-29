@@ -1,9 +1,15 @@
-/listings/_form
 
-<%= form_for @listing do |form| %>
+<center>
+
+<%= form_for @listing, :html => {:multipart => true} do |form| %>
+
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
+  </div>
+  
+  <div>
+    <%= form.file_field :picture %>
   </div>
   
   <div>
@@ -29,3 +35,5 @@
   <%= form.submit "Submit" %>
   
 <% end %>
+
+</center>

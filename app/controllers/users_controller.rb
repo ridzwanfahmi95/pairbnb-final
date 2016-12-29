@@ -49,7 +49,8 @@ before_action :find_user, only: [:show, :edit, :update]
 
    private
    def user_params
-      params.require(:user).permit(:username, :name, :email, :password)
+      params.require(:user).permit(:username, :name, :email, :password, :image)
    end
+    #image
     
 end
