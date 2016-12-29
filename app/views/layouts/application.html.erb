@@ -2,12 +2,43 @@
 <html>
 <head>
   <title>PairbnbFinal</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="icon" type="image/jpg" href="https://cityofneedlesblog.files.wordpress.com/2015/12/twitch-tv-logo.png?w=100&h=100">
 </head>
 <body>
 
+
+    <div id="header">
+       
+        <div class="page-header">
+            <img src="https://cityofneedlesblog.files.wordpress.com/2015/12/twitch-tv-logo.png?w=100&h=100" id="logo" />
+               <p id="logo_text">Pairbnb</p>
+        <% if signed_in? %>
+            <a class="nav_links" ><%= link_to 'Home', home_path(current_user) %></a>
+            <a class="nav_links" ><%= link_to 'Profile', user_path(current_user) %></a>
+            <a class="nav_links" ><%= link_to 'Add List', new_listing_path() %></a>
+            <a class="nav_links" ><%= link_to 'Sign out', sign_out_path, method: :delete %></a><br>
+            
+             Signed in as: <%= current_user.username %><br>
+            
+        <% else %>  
+            <a class="nav_links" ><%= link_to 'Sign in', sign_in_path %></a>
+            <a class="nav_links" ><%= link_to "Sign in with Facebook", "/auth/facebook" %></a>
+         <% end %>
+        </div>
+        
+   <div id="flash">
+     <% flash.each do |key, value| -%>
+       <div id="flash_<%= key %>"><%=h value %></div>
+     <% end %>
+   </div>
+        
+  
+    
 <%= yield %>
 
 </body>
