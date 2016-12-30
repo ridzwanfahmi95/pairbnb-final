@@ -18,8 +18,11 @@ before_action :find_listing, only: [:show, :edit, :update]
     end
     
     def show
+        # @listing = Listing.new
         #  @booking = @listing.bookings.new
+         #before booking>>
         @listing = Listing.find(params[:id])
+        @booking = @listing.bookings.new
     end
     
     def edit

@@ -13,4 +13,11 @@
   <%= link_to "Edit", edit_listing_path(@listing) %>
 </div>
 
+
+
+
+
+<div>
+<%= render(:partial => "bookings/form",    :locals => {:listing => @listing,:booking => @booking}) %>
+</div>
 </center>
