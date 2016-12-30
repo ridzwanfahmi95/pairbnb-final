@@ -1,0 +1,10 @@
+<div class="container">
+
+  <h3><%= @listing.title %></h3>
+  <p>Description : <%= @listing.description %></p>
+  <p>Price : <%= @listing.price %></p>
+  <p>Address : <%= @listing.address %></p>
+  <p>Max Guest : <%= @listing.max_guests %></p>
+
+  <%= link_to "Edit", edit_listing_path(@listing) %>
+</div>

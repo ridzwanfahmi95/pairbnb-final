@@ -30,7 +30,10 @@ Rails.application.routes.draw do
 # get 'users' => 'welcome#index'
 get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 #===============================================================================
-  root 'welcome#index' #similar with 'static_pages/landing'(ming xiang)
+  root 'listings#index' #similar with 'static_pages/landing'(ming xiang)
+  
+  
+  resources :listings
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
