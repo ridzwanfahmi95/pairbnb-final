@@ -1,30 +1,16 @@
-/welcome/index
 
-
-<div id="header">
-  <% if signed_in? %>
-      Signed in as: <%= current_user.username %><br>
-        <%= link_to 'Home' %>
-        <%= link_to 'Profile', user_path(current_user) %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-  <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-  <% end %>
- </div>
-    
-<div id="flash">
-  <% flash.each do |key, value| -%>
-    <div id="flash_<%= key %>"><%=h value %></div>
-  <% end %>
-</div>
 
 
 <center>
-<div id="welcome_text_div">
-  <h1 id="welcome_text">WeLcoMe 2 PairBnB-FiNaL</h1>
-    <p id="welcome_under_text">Where you can find your peace.</p>
-    <a href="#" id="how_it_works">How It Works</a>
-            
-</div>     
+
+        <div id="welcome_text_div">
+            <p id="welcome_text">Welcome 2 PairBnB</p>
+            <p id="welcome_under_text">Rent unique places to stay from local hosts in 190+ countries.</p>
+            <a href="#" id="how_it_works">
+                How It Works
+            </a>
+        </div>  
+    </div> 
+    
 </center>
+

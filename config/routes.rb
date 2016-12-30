@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   # get "/sign_up" => "clearance/users#new", as: "sign_up"
 # get 'users' => 'welcome#index'
 get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+get "/home" => "listings#index"
+# get "add_list/:id" => "listing#_form" 
 #===============================================================================
   root 'listings#index' #similar with 'static_pages/landing'(ming xiang)
   
