@@ -1,6 +1,8 @@
+/listing/show
 <div class="container">
 
   <h3><%= @listing.title %></h3>
+ <label> Posted By : </label> <%= @listing.user.email %><br>
   <p>Description : <%= @listing.description %></p>
   <p>Price : <%= @listing.price %></p>
   <p>Address : <%= @listing.address %></p>

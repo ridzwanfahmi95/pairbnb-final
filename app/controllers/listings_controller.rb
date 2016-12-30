@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
 before_action :find_listing, only: [:show, :edit, :update]
     
     def index
-        @listing = Listing.all
+        @listing = Listing.all.paginate(:page => params[:page], per_page: 5)
     end
     
     def new
@@ -11,7 +11,7 @@ before_action :find_listing, only: [:show, :edit, :update]
     end
     
     def create
-        @listing = Listing.new(listing_params)
+        @listing = current_user.listings.new(listing_params)
         if @listing.save
         redirect_to listings_path
         end
