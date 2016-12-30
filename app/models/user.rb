@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
   has_many :listings
   mount_uploader :image, ImageUploader
-#   has_many :bookings
+  has_many :bookings
 
   def self.create_with_auth_and_hash(authentication,auth_hash)
     #warn

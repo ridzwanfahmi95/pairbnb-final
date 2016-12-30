@@ -8,6 +8,7 @@ before_action :find_user, only: [:show, :edit, :update]
    
    def show
       @user = User.find(params[:id])
+      @bookings = @user.bookings
    end
 
    def new

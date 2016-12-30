@@ -34,9 +34,14 @@ get "/home" => "listings#index"
 #===============================================================================
   root 'listings#index' #similar with 'static_pages/landing'(ming xiang)
   
-  
-  resources :listings
+  #cun!
+  resources :listings do 
+    resources :bookings, only: [:create]
+  end
+  resources :bookings, only: [:destroy]
 
+
+# get ""
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -87,7 +92,7 @@ get "/home" => "listings#index"
   #   end
 end
 
-# Prefix Verb   URI Pattern                             Controller#Action
+#     Prefix Verb   URI Pattern                             Controller#Action
 #             users GET    /users(.:format)                        users#index
 #         edit_user GET    /users/:id/edit(.:format)               users#edit
 #               user GET    /users/:id(.:format)                    users#show
@@ -110,6 +115,7 @@ end
 #                   PUT    /users/:id(.:format)                    users#update
 #                   DELETE /users/:id(.:format)                    users#destroy
 #                   GET    /auth/:provider/callback(.:format)      sessions#create_from_omniauth
+#               home GET    /home(.:format)                         listings#index
 #               root GET    /                                       listings#index
 #           listings GET    /listings(.:format)                     listings#index
 #                   POST   /listings(.:format)                     listings#create
@@ -119,6 +125,14 @@ end
 #                   PATCH  /listings/:id(.:format)                 listings#update
 #                   PUT    /listings/:id(.:format)                 listings#update
 #                   DELETE /listings/:id(.:format)                 listings#destroy
+#           bookings GET    /bookings(.:format)                     bookings#index
+#                   POST   /bookings(.:format)                     bookings#create
+#       new_booking GET    /bookings/new(.:format)                 bookings#new
+#       edit_booking GET    /bookings/:id/edit(.:format)            bookings#edit
+#           booking GET    /bookings/:id(.:format)                 bookings#show
+#                   PATCH  /bookings/:id(.:format)                 bookings#update
+#                   PUT    /bookings/:id(.:format)                 bookings#update
+#                   DELETE /bookings/:id(.:format)                 bookings#destroy
 #                   POST   /passwords(.:format)                    clearance/passwords#create
 #                   GET    /passwords/new(.:format)                clearance/passwords#new
 #                   POST   /session(.:format)                      clearance/sessions#create
