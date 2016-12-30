@@ -1,8 +1,15 @@
-/users/_form
 
 <center>
 
-<%= form_for @user do |form| %>
+<%= form_for @user, :html => {:multipart => true} do |form| %>
+  <div>
+    <%= form.file_field :image %>
+  </div>
+  <div>
+    <%= form.label :remote_image_url, "or image URL" %>
+    <%= form.text_field :remote_image_url %>
+  </div>
+  
   <div>
     <%= form.label :username %>
     <%= form.text_field :username %>

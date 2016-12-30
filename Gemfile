@@ -36,6 +36,12 @@ gem 'omniauth'
 
 #paginate chllnge
 gem 'will_paginate', '~> 3.1.1'
+
+#image upload challnge
+gem 'carrierwave'
+# gem 'rmagick'
+gem 'mini_magick'
+
 #===============================================================================
 
 # Use ActiveModel has_secure_password
