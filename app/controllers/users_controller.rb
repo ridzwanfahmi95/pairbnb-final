@@ -20,9 +20,9 @@ before_action :find_user, only: [:show, :edit, :update]
       @user = User.new(user_params)
       
       if @user.save
+         # ReservationMailer.booking_email(@user).deliver
          redirect_to users_path
       else
-         
          render 'new'
       end
    end
