@@ -42,6 +42,11 @@ gem 'carrierwave'
 # gem 'rmagick'
 gem 'mini_magick'
 
+#background for email
+gem 'sidekiq'
+
+#payment gateway (hold)
+gem 'braintree'
 #===============================================================================
 
 # Use ActiveModel has_secure_password

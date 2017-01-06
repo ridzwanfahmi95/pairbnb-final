@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
         @booking = current_user.bookings.new(booking_params)
         @booking.listing = @listing
       if @booking.save
-       ReservationMailer.booking_email(current_user, @listing.user, @booking_id).deliver_now
+       ReservationMailerJob.perform_later(current_user, @listing.user, @booking_id)
       redirect_to current_user
       else
       @errors = @booking.errors.full_messages
