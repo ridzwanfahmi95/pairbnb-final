@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+
 #>>>>>>>>>>>>>>>>>>>>>         pairbnb-final        <<<<<<<<<<<<<<<<<<<<<<<<<<<<
   
   # The priority is based upon order of creation: first created -> highest priority.
@@ -40,6 +42,7 @@ get "/home" => "listings#index"
   end
   resources :bookings, only: [:destroy]
 
+# get 'braintree/new'
 
 # get ""
   # Example of regular route:
